@@ -1,0 +1,1407 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 400;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 500;
+    src: url("../fonts/Inter-Medium.woff2") format("woff2")
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    --default-logo-width: 48px;
+    --default-logo-height: 48px;
+
+    /* colors */
+    --global-text-color: #333333;
+    --global-selection-backgroundColor: #0085FF;
+    --global-popup-backgroundColor: #F5C2C1;
+    --global-list-backgroundColor: #FFFFFF;
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    /* background: #899499; */
+    background: #FFFFFF;
+    border-radius: 2rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #D3D3D3;
+    border-radius: 2rem;
+}
+
+body {}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: var(--global-selection-backgroundColor);
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: var(--global-selection-backgroundColor);
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 0;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 var(--global-whitespace);
+}
+
+ul,
+ol {
+    padding-left: var(--global-whitespace);
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: var(--global-whitespace-sm);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 var(--global-whitespace);
+}
+
+a,
+a:visited {
+    /* transition: all var(--global-transitionTiming-alpha); */
+    color: var(--global-selection-backgroundColor);
+    outline-color: var(--global-selection-backgroundColor);
+    outline-width: medium;
+    outline-offset: 2px;
+}
+
+a:hover,
+a:focus {
+    color: var(--global-selection-backgroundColor);
+}
+
+a:active {
+    color: var(--global-selection-backgroundColor);
+}
+
+label,
+input {
+    display: block;
+}
+
+select {
+    width: 100%;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+/*
+    Components: header
+    ---
+    Components classes for the header
+*/
+.c-header {
+    display: flex;
+    /* width: 100%; */
+    height: 80px;
+    /* border-bottom: 1px solid grey; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+/*
+    Components: button
+    ---
+    Components classes for the buttons in the header
+*/
+.c-header__button {
+    background-color: rgba(51, 51, 51, 0.05);
+    border-radius: 8px;
+    border-width: 0;
+    color: var(--global-text-color);
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-right: .5rem;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.c-header__button:hover {
+    background-color: rgba(51, 51, 51, 0.1);
+}
+
+.c-header__button:active {
+    background-color: rgba(51, 51, 51, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 6px -1px;
+}
+
+/*
+    Components: search
+    ---
+    Components classes for the searchbar
+*/
+.c-search {
+    /* width: 100%;
+    height: 80px;
+    border-bottom: 1px solid grey; */
+}
+
+/*
+    Components: logo
+    ---
+    Components classes for the logo
+*/
+.c-logo {}
+
+.c-logo__image {
+    width: 72px;
+    height: 80px;
+}
+
+/*
+    Components: conference choice
+    ---
+    Components classes for confrence buttons
+*/
+
+.c-conference {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    /* border-bottom: 1px solid grey; */
+
+}
+
+/*
+    Components: map
+    ---
+    Components classes for the map
+*/
+.c-map {
+    position: relative;
+    /* scale: .7; */
+}
+
+.c-map__image {
+    position: relative;
+    width: 100%;
+
+
+}
+
+.c-76ers {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 28%;
+    left: 72%;
+}
+
+.c-76ers:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-bucks {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 22%;
+    left: 59.5%;
+}
+
+.c-bucks:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-bulls {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 37.5%;
+    left: 60.5%;
+}
+
+.c-bulls:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-cavaliers {
+    --caveliers-logo-width: 40px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--caveliers-logo-width);
+    top: 34%;
+    left: 67.5%;
+}
+
+.c-cavaliers:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-celtics {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--caveliers-logo-width);
+    top: 20.5%;
+    left: 77%;
+}
+
+.c-celtics:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-clippers {
+    --clippers-logo-width: 58px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--clippers-logo-width);
+    top: 55%;
+    left: 32%;
+}
+
+.c-clippers:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-grizzlies {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 51%;
+    left: 65%;
+}
+
+.c-grizzlies:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-hawks {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 61%;
+    left: 68.5%;
+}
+
+.c-hawks:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-heat {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 79%;
+    left: 73%;
+}
+
+.c-heat:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-hornets {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 54.5%;
+    left: 71%;
+}
+
+.c-hornets:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-jazz {
+    --jazz-logo-width: 62px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--jazz-logo-width);
+    top: 40%;
+    left: 37.5%;
+}
+
+.c-jazz:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-kings {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 30%;
+    left: 28%;
+}
+
+.c-kings:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-knicks {
+    --knicks-logo-width: 56px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--knicks-logo-width);
+    top: 21%;
+    left: 70.5%;
+}
+
+.c-knicks:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-lakers {
+    --lakers-logo-width: 72px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--lakers-logo-width);
+    top: 49%;
+    left: 29.5%;
+}
+
+.c-lakers:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-magic {
+    --magic-logo-width: 64px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--magic-logo-width);
+    top: 72%;
+    left: 70%;
+}
+
+.c-magic:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-mavericks {
+    --mavericks-logo-width: 54px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--mavericks-logo-width);
+    top: 65%;
+    left: 53%;
+}
+
+.c-mavericks:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-nets {
+    --nets-logo-height: 52px;
+
+    position: absolute;
+    height: var(--nets-logo-height);
+    width: var(--default-logo-width);
+    top: 13%;
+    left: 73%;
+}
+
+.c-nets:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-nuggets {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 42%;
+    left: 44%;
+    /* left: 680px; */
+}
+
+.c-nuggets:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-pacers {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 36%;
+    left: 64%;
+}
+
+.c-pacers:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-pelicans {
+    --pelicans-logo-width: 56px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--pelicans-logo-width);
+    top: 68%;
+    left: 58%;
+}
+
+.c-pelicans:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-pistons {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 24%;
+    left: 64.5%;
+}
+
+.c-pistons:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-raptors {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 15%;
+    left: 68%;
+}
+
+.c-raptors:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-rockets {
+    --rockets-logo-width: 72px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--rockets-logo-width);
+    top: 74%;
+    left: 53%;
+}
+
+.c-rockets:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-spurs {
+    --spurs-logo-height: 40px;
+    --spurs-logo-width: 60px;
+
+    position: absolute;
+    height: var(--spurs-logo-height);
+    width: var(--spurs-logo-width);
+    top: 70%;
+    left: 48.5%;
+}
+
+.c-spurs:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-suns {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 58%;
+    left: 36%;
+}
+
+.c-suns:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-thunder {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 54%;
+    left: 53%;
+}
+
+.c-thunder:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-timberwolves {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 16%;
+    left: 55%;
+}
+
+.c-timberwolves:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-trailblazers {
+    --trailbalzers-logo-width: 52px;
+
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--trailbalzers-logo-width);
+    top: 20%;
+    left: 30%;
+}
+
+.c-trailblazers:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-warriors {
+    --warriors-logo-height: 52px;
+
+    position: absolute;
+    height: 52px;
+    width: var(--default-logo-width);
+    top: 40%;
+    left: 29%;
+}
+
+.c-warriors:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-wizards {
+    position: absolute;
+    height: var(--default-logo-height);
+    width: var(--default-logo-width);
+    top: 8%;
+    left: 32%;
+}
+
+.c-wizards:hover {
+    transform: scale(1.2);
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+}
+
+.c-selected-team {
+    opacity: 1;
+    transition-duration: .7s;
+}
+
+.c-unselected-team {
+    opacity: 0.5;
+    transition-duration: .7s;
+}
+
+/* End of NBA Logos */
+/*
+    Component: Popups
+    ---
+    Components classes for the popups
+*/
+.c-popup {
+    background-color: var(--global-popup-backgroundColor);
+    width: 50vh;
+    height: 70vh;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 60px 40px 1fr;
+}
+
+.c-popup-close {
+    grid-area: 1 / 4 / 2 / 5;
+    text-align: right;
+}
+
+.c-popup-close__button {
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ffffff;
+    background: var(--global-selection-backgroundColor);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.c-popup-team__info {
+    font-family: "Inter Web";
+    font-weight: 500;
+    grid-area: 2 / 1 / 3 / 2;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: .75rem;
+}
+
+.c-popup-team__name {
+    font-family: "Inter Web";
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    grid-area: 1 / 1 / 2 / 2;
+    margin-left: .5rem;
+}
+
+.c-popup-team__icon {
+    height: var(--default-logo-height);
+    margin-right: 1rem;
+    margin-top: -20px;
+}
+
+.c-popup-team__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.c-popup-team__item {
+    margin-right: 3rem;
+}
+
+.c-popup-roster {
+    grid-area: 3/1/end/end;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.c-popup-roster h3 {
+    background-color: var(--global-list-backgroundColor);
+    width: 15rem;
+    border-radius: 4px;
+    margin-left: .5rem;
+}
+
+.c-popup-roster__view {
+    background-color: var(--global-list-backgroundColor);
+    position: absolute;
+    width: 15rem;
+    height: 20rem;
+    margin-left: .5rem;
+    border-radius: 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.c-popup-roster h3 {
+    font-family: "Inter Web";
+    font-weight: 500;
+    margin-left: .5rem;
+    margin-top: .5rem;
+    padding-left: .5rem;
+    display: fixed;
+}
+
+.c-popup-roster__list {
+    list-style: none;
+    padding: 0;
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+
+.c-popup-roster__list li {
+    font-family: "Inter Web";
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+.c-popup h2 {
+    margin-top: -20px;
+
+}
+
+.c-popup p {
+    font-size: 14px;
+    text-align: justify;
+    margin: .5rem 0;
+    line-height: 25px;
+}
+
+.c-popup-placement {
+    font-family: "Inter Web";
+    font-weight: 400;
+    grid-area: 2 / 1 / 3 / 2;
+    margin-right: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-self: end;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 27em !important;
+}
+
+.u-max-width-sm {
+    max-width: 39em !important;
+}
+
+.u-max-width-md {
+    max-width: 50em !important;
+}
+
+.u-max-width-lg {
+    max-width: 63.5em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+    text-align: center;
+}
+
+.u-align-center {
+    margin: 0 auto;
+}
+
+/*
+    Utilities: text
+    Utility classes to create smaller or bigger test
+*/
+
+.u-text-sm {
+    font-size: 14px;
+}
+
+/*
+    Utility: Widths
+    ---
+    Utility classes to put specific widths onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-width-auto {
+    width: auto !important;
+}
+
+.u-1-of-2 {
+    width: 50% !important;
+}
+
+.u-1-of-3 {
+    width: 33.3333333333% !important;
+}
+
+.u-2-of-3 {
+    width: 66.6666666667% !important;
+}
+
+.u-1-of-4 {
+    width: 25% !important;
+}
+
+.u-3-of-4 {
+    width: 75% !important;
+}
+
+.u-1-of-5 {
+    width: 20% !important;
+}
+
+.u-2-of-5 {
+    width: 40% !important;
+}
+
+.u-3-of-5 {
+    width: 60% !important;
+}
+
+.u-4-of-5 {
+    width: 80% !important;
+}
+
+.u-1-of-6 {
+    width: 16.6666666667% !important;
+}
+
+.u-5-of-6 {
+    width: 83.3333333333% !important;
+}
+
+/* @media (min-width: 550px) {
+    .c-map {
+        size: .2;
+    }
+} */
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        width: 50% !important;
+    }
+
+    .u-1-of-3-bp1 {
+        width: 33.3333333333% !important;
+    }
+
+    .u-2-of-3-bp1 {
+        width: 66.6666666667% !important;
+    }
+
+    .u-1-of-4-bp1 {
+        width: 25% !important;
+    }
+
+    .u-3-of-4-bp1 {
+        width: 75% !important;
+    }
+
+    .u-1-of-5-bp1 {
+        width: 20% !important;
+    }
+
+    .u-2-of-5-bp1 {
+        width: 40% !important;
+    }
+
+    .u-3-of-5-bp1 {
+        width: 60% !important;
+    }
+
+    .u-4-of-5-bp1 {
+        width: 80% !important;
+    }
+
+    .u-1-of-6-bp1 {
+        width: 16.6666666667% !important;
+    }
+
+    .u-5-of-6-bp1 {
+        width: 83.3333333333% !important;
+    }
+}
+
+/* @media (min-width: 650px) {
+    .c-map {
+        size: .3;
+    }
+}
+
+@media (min-width: 750px) {
+    .c-map {
+        size: .4;
+    }
+} */
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        width: 50% !important;
+    }
+
+    .u-1-of-3-bp2 {
+        width: 33.3333333333% !important;
+    }
+
+    .u-2-of-3-bp2 {
+        width: 66.6666666667% !important;
+    }
+
+    .u-1-of-4-bp2 {
+        width: 25% !important;
+    }
+
+    .u-3-of-4-bp2 {
+        width: 75% !important;
+    }
+
+    .u-1-of-5-bp2 {
+        width: 20% !important;
+    }
+
+    .u-2-of-5-bp2 {
+        width: 40% !important;
+    }
+
+    .u-3-of-5-bp2 {
+        width: 60% !important;
+    }
+
+    .u-4-of-5-bp2 {
+        width: 80% !important;
+    }
+
+    .u-1-of-6-bp2 {
+        width: 16.6666666667% !important;
+    }
+
+    .u-5-of-6-bp2 {
+        width: 83.3333333333% !important;
+    }
+}
+
+/* @media (min-width: 850px) {
+    .c-map {
+        size: .5;
+    }
+}
+
+@media (min-width: 950px) {
+    .c-map {
+        size: .6;
+    }
+} */
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        width: 50% !important;
+    }
+
+    .u-1-of-3-bp3 {
+        width: 33.3333333333% !important;
+    }
+
+    .u-2-of-3-bp3 {
+        width: 66.6666666667% !important;
+    }
+
+    .u-1-of-4-bp3 {
+        width: 25% !important;
+    }
+
+    .u-3-of-4-bp3 {
+        width: 75% !important;
+    }
+
+    .u-1-of-5-bp3 {
+        width: 20% !important;
+    }
+
+    .u-2-of-5-bp3 {
+        width: 40% !important;
+    }
+
+    .u-3-of-5-bp3 {
+        width: 60% !important;
+    }
+
+    .u-4-of-5-bp3 {
+        width: 80% !important;
+    }
+
+    .u-1-of-6-bp3 {
+        width: 16.6666666667% !important;
+    }
+
+    .u-5-of-6-bp3 {
+        width: 83.3333333333% !important;
+    }
+}
+
+/* @media (min-width: 1050px) {
+    .c-map {
+        size: .7;
+    }
+}
+
+@media (min-width: 1150px) {
+    .c-map{
+        size: .8;
+    }
+} */
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        width: 50% !important;
+    }
+
+    .u-1-of-3-bp4 {
+        width: 33.3333333333% !important;
+    }
+
+    .u-2-of-3-bp4 {
+        width: 66.6666666667% !important;
+    }
+
+    .u-1-of-4-bp4 {
+        width: 25% !important;
+    }
+
+    .u-3-of-4-bp4 {
+        width: 75% !important;
+    }
+
+    .u-1-of-5-bp4 {
+        width: 20% !important;
+    }
+
+    .u-2-of-5-bp4 {
+        width: 40% !important;
+    }
+
+    .u-3-of-5-bp4 {
+        width: 60% !important;
+    }
+
+    .u-4-of-5-bp4 {
+        width: 80% !important;
+    }
+
+    .u-1-of-6-bp4 {
+        width: 16.6666666667% !important;
+    }
+
+    .u-5-of-6-bp4 {
+        width: 83.3333333333% !important;
+    }
+}
+
+/* @media (min-width: 1250px) {
+    .c-map{
+        size: .9;
+    }
+}
+
+@media (min-width: 1350px) {
+    .c-map{
+        size: 1;
+        
+    }
+} */
+
+
+/* .has-error {
+    --label-color: var(--global-color-error);
+    --input-color: var(--global-color-error);
+    --input-placeholder-color: var(--global-color-error-transparent);
+    --input-borderColor: var(--global-input-error-borderColor);
+    --input-hover-borderColor: var(--global-input-error-borderColor);
+    --input-focus-borderColor: var(--global-input-error-borderColor);
+    --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
+} */
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
